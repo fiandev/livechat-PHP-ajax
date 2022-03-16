@@ -1,0 +1,420 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: .1s;
+}
+*::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+:root {
+  --purple: #2b2741;
+  --black: #27033e;
+  --white: #ffffff;
+  --width_post: 50%;
+}
+body {
+  background-color: var(--black);
+  height: auto;
+}
+
+.container {
+  margin: 0px 10px;
+  margin-bottom: 80px;
+  min-height: 100vh;
+  position: relative;
+}
+.title-top {
+  text-align: center;
+  color: var(--white);
+  font-size: .9rem;
+  margin: 5px 0;
+}
+.controller {
+  
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.HasSelect {
+  max-width: 40%;
+  padding: 5px 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  margin-top: -60px;
+  border-radius: 20px 0px 0px 20px;
+  background-color: var(--white);
+  box-sizing: border-box;
+  overflow-x: scroll;
+}
+.controller .plus-item {
+  width: 10%;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--white);
+  margin: 0px 5px;
+  background-image: url('https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/plus-1024.png');
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  transition: .2s;
+}
+.controller form {
+  width: 85%;
+}
+.controller form .input {
+  width: 70%; /*70*/
+  padding: 3px 10px;
+  margin: 0px 5px;
+  margin-bottom: -15px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  font-family: Arial Sans-Serif;
+  text-transform: capitalize;
+  box-sizing: border-box;
+}
+.controller form .input:hover {
+  padding: 3px 5px;
+  border-radius: 5px;
+  text-transform: none;
+}
+.controller form button {
+  width: 20%;
+  padding: 10px 5px;
+  border-radius: 5px;
+  background-color: var(--white);
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+.controller form button:hover {
+  background-color: #0091b6;
+}
+.date-messages,.date-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.date-messages hr, .date-message hr  {
+  width: 25%;
+  height: .1px;
+  background-color: var(--white);
+  border: none;
+  outline: none;
+}
+.date-messages span,.date-message span {
+  margin: 0px 10px;
+  color: var(--white);
+  font-size: 10px;
+}
+.message {
+  display: flex;
+  position: relative;
+  margin-bottom: 10px;
+  float: left;
+}
+.message.you {
+  display: flex;
+  position: relative;
+  float: right;
+  flex-direction: row-reverse;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+.message.you::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.message .avatar {
+  width: 35px;
+  height: 35px;
+  background-color: var(--white);
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.message .avatar img {
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+  border-radius: 100%;
+}
+.message .information,
+.message.you .information{
+  width: 80%;
+}
+.message.you .information .user-detail {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.message .information a{
+  color: #000;
+  font-size: 10px;
+  text-decoration: none;
+}
+.message .information .user-detail {
+  font-size: 12px;
+  color: yellow;
+  display: flex;
+  align-items: center;
+}
+.message.you .information .user-detail .username {
+  margin-left: 5px;
+}
+.message .information .user-detail .username {
+  margin-right: 5px;
+}
+.message .information .user-detail .you {
+  color: skyblue;
+}
+.message .information .user-detail .date {
+  font-size: 8px;
+  color: var(--white);
+  display: inline;
+}
+.message .information .msg {
+  font-size: 10px;
+  color: #e6e6dc;
+  width: var(--width_post);
+  padding: 10px 0;
+  overflow-x: scroll;
+}
+.message .information .photo-upload {
+  max-width: var(--width_post);
+  max-height: 400px;
+  display: block;
+  margin: 5px 0;
+}
+.message .information .message-audio {
+  width: var(--width_post);
+  max-height: 20px;
+  display: flex;
+  margin: 5px 0;
+  outline: none;
+  background-color: var(--white);
+  padding: 0 10px;
+  border-radius: 20px;
+  align-items: center;
+  color: var(--black);
+}
+.message-audio .audio-control {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+  fill: #000;
+  align-items: center;
+  justify-content: center;
+}
+.message-audio p {
+  width: calc(100% - 20px);
+  overflow-x: scroll;
+  font-size: 10px;
+}
+#anu {
+  width: calc(100% + 20px);
+  margin-left: -10px;
+  position: absolute;
+  top: -10%;
+  right: 0;
+  left: 0;
+  bottom: 0;;
+  background-color: #000;
+  opacity: .8;
+  z-index: 3;
+}
+.multimedia {
+  width: 100%;
+  height: 40vh;
+  background-color: var(--white);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(200%);
+  z-index: 4;
+  transition: 1s;
+  border-radius: 20px;
+  text-align: center;
+  /*box-sizing: border-box;*/
+}
+.multimedia .text {
+  margin: 10px 0;
+}
+.multimedia .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.multimedia#addMediaSticker {
+  overflow-y: scroll;
+}
+.multimedia#addMediaSticker .content{
+  height: auto;
+  display: block;
+  overflow: scroll;
+}
+.multimedia#addMediaSticker .content img {
+  width: 60px;
+  height: 60px;
+  margin: 5px 15px;
+}
+.multimedia .item-addMedia {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 1px;
+  background-color: var(--white);
+  margin: 10px;
+  display: block;
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+#btn-photo {
+  background-image: url(https://i.ibb.co/GV2QK4X/download-1.png);
+}
+#btn-file {
+  background-image: url(https://findicons.com/files/icons/1579/devine/48/file.png);
+}
+#btn-audio {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXwhVrfyoRzgx8DZOp0Z07fg57vRz_nykY5nkN8h5XUd-x1JUP2Lvi2caG&s=10);
+}
+#btn-video {
+  background-image: url("https://i.ibb.co/z2Qb83G/video-cameras-clip-art-vector-graphics-photographic-film-camera-7fa3c1347d959cefa8cda981cbe2f851.png");
+}
+#btn-locate {
+  background-image: url("https://i.ibb.co/xSNzj0V/download-2.png");
+}
+#btn-sticker {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC7QbSOMumkuyFM58j_n4-vMUUqJpmx929LQ&usqp=CAU');
+  filter: saturate(0);
+}
+.message-file {
+  background-color: var(--white);
+  width: var(--width_post);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 5px 0;
+  overflow-x: scroll;
+  padding: 2px;
+}
+.message-file .icon-file {
+  background-image: url(https://img.icons8.com/windows/452/file-download.png);
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.message-file p {
+  width: calc(100% - 20px);
+}
+.message-video {
+  width: var(--width_post);
+  height: 80px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+}
+.message-video i {
+  font-size: 30px;
+  position: absolute;
+  margin: auto;
+  top: 30%;
+  left: 40%;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+}
+.message-location {
+  width: var(--width_post);
+}
+.message-location a {
+  color: #000;
+  background-color: #fff;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  border-radius: 20px;
+}
+.message-video .video-player {
+  width: inherit;
+  height: inherit;
+  z-index: -1;
+}
+.newMessage {
+  animation: spawn .1s;
+  transform: translateX(-100%);
+  transition: .1s;
+}
+@keyframes spawn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+    
+  }
+}
+/* message you */
+.message.you .information .msg {
+  float: right;
+  text-align: right;
+}
+.message.you .information .photo-upload {
+  float: right;
+  text-align: right;
+  margin-left: 10%;
+}
+.message.you .information .message-audio {
+  float: right;
+  text-align: left;
+  padding: 0 10px;
+}
+.message.you .information .message-video {
+  float: right;
+  width: var(--width_post);
+  margin-left: 20px;
+}
+.message.you .information .message-file {
+  float: right;
+  text-align: left;
+  width: var(--width_post);
+  padding: 2.5px 2%;
+  padding-left: 20%;
+  display: flex;
+}
+.message.you .information .message-location {
+  float: right;
+  text-align: right;
+  width: auto;
+  display: flex;
+}
+.message.you .information .message-location a {
+  padding: 10px 25px;
+  width: 100%;
+}
