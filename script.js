@@ -135,7 +135,9 @@ function render_video(index,path){
   
 }
 function errorImage(e){
+  /*
   $(e).attr("src","https://101red.com/prime/wp-content/uploads/2021/03/24-Error-404-Not-Found-Apa-Artinya-serta-Gimana-Metode-Mengatasinya.jpg");
+  */
 }
 function fileHandle(self){
   //let p = document.querySelector("#photo");
