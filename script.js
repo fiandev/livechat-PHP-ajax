@@ -111,7 +111,7 @@ function cekUpdate(){
           </div>
           <p class="msg ${whoIsThis}">${msg}</p></div></div>`);
         } else if(file != undefined){
-          $("#root_2").append(`<div class="message ${whoIsThis} "><a href="/user?name=${encodeURI(d.name)}"><div class="avatar"><img class="" src="${avatar}" alt="${name}" /></div></a><div class="information"><div class="user-detail"><p class="username ${whoIsThis}">${name} </p><p class="date">${date}</p></div><a target="_blank" href="/file.php?id=${file.split(dir).join("")}"><div class="message-file"><span class="icon-file"></span><p>${filename}</p></div></a><p class="msg ${whoIsThis}">${msg}</p></div></div>`);
+          $("#root_2").append(`<div class="message ${whoIsThis} "><a href="/user?name=${encodeURI(d.name)}"><div class="avatar"><img class="" src="${avatar}" alt="${name}" /></div></a><div class="information"><div class="user-detail"><p class="username ${whoIsThis}">${name} </p><p class="date">${date}</p></div><a download="${file.split(dir).join("")}" href="${file}"><div class="message-file"><span class="icon-file"></span><p>${filename}</p></div></a><p class="msg ${whoIsThis}">${msg}</p></div></div>`);
         } else if(locate != undefined){
           $("#root_2").append(`<div class="message ${whoIsThis} "><a href="/user?name=${encodeURI(d.name)}"><div class="avatar"><img class="" src="${avatar}" alt="${name}" /></div></a><div class="information"><div class="user-detail"><p class="username ${whoIsThis}">${name} </p><p class="date">${date}</p></div>
           <div class="message-location">
@@ -216,7 +216,7 @@ function getPosition(position){
 function resetValueInput(){
   document.querySelectorAll(`#form input[type="file"]`).forEach((e,i) => {
     e.value=null;
-    console.log(e);
+    //console.log(e);
   })
 }
 function hideAnu(self){
