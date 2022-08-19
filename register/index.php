@@ -135,5 +135,10 @@ fclose($f);
     </script>
     <script type="text/javascript" src="../clear-wm.js"></script>
     <script type="text/javascript" src="./close.js"></script>
+    <script>
+      $(document).ready(function(){
+       $('body').find('img[src$="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]').remove();
+      }); 
+    </script>
 </body>
 </html>

@@ -71,7 +71,7 @@ function cekUpdate(){
         avatar = "avatar.png";
       }
       /* */
-      if (id == ip_user) {
+      if (id == ip_user && name == name_user) {
         whoIsThis = "you";
         name = "you";
       }
